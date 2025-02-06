@@ -1,0 +1,56 @@
+/* Custom Fonts */
+body {
+    font-family: 'Georgia', serif;
+}
+
+/* Hero Section */
+.hero-section {
+    background: url('/images/hero-bg.jpg') no-repeat center center/cover;
+    color: #fff;
+    padding: 100px 0;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+
+.hero-section p {
+    font-size: 1.25rem;
+    margin: 20px 0;
+}
+
+/* Services Section */
+.services-section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.services-section h3 {
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.services-section p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Call to Action Section */
+.cta-section {
+    background: #007bff;
+    padding: 60px 0;
+}
+
+.cta-section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+/* Footer */
+.footer {
+    background: #f8f9fa;
+    color: #333;
+}

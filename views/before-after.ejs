@@ -1,0 +1,24 @@
+<%- include('partials/header') %>
+<div class="container mt-5">
+    <h1>Before & After</h1>
+    <div class="row">
+        <% cases.forEach(case => { %>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= case.title %></h5>
+                        <p class="card-text"><%= case.description %></p>
+                        <div class="row">
+                            <% case.images.forEach(image => { %>
+                                <div class="col-md-6">
+                                    <img src="<%= image %>" class="img-fluid">
+                                </div>
+                            <% }) %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+</div>
+<%- include('partials/footer') %>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/admin/dashboard">Admin Dashboard</a>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="mb-4">Edit Home Page Content</h1>
+        <form action="/admin/update-home-page" method="POST">
+            
+            <!-- Logo Section -->
+            <div class="mb-3">
+                <label for="logo_text" class="form-label">Logo Text (Leave empty if using an image)</label>
+                <input type="text" class="form-control" id="logo_text" name="logo_text" value="<%= homePage.logo_text %>">
+            </div>
+            <div class="mb-3">
+                <label for="logo_image" class="form-label">Logo Image URL (Leave empty if using text)</label>
+                <input type="text" class="form-control" id="logo_image" name="logo_image" value="<%= homePage.logo_image %>">
+            </div>
+
+            <!-- Hero Section -->
+            <div class="mb-3">
+                <label for="hero_title" class="form-label">Hero Title</label>
+                <input type="text" class="form-control" id="hero_title" name="hero_title" value="<%= homePage.hero_title %>" required>
+            </div>
+            <div class="mb-3">
+                <label for="hero_description" class="form-label">Hero Description</label>
+                <textarea class="form-control" id="hero_description" name="hero_description" required><%= homePage.hero_description %></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="hero_button_text" class="form-label">Hero Button Text</label>
+                <input type="text" class="form-control" id="hero_button_text" name="hero_button_text" value="<%= homePage.hero_button_text %>" required>
+            </div>
+            <div class="mb-3">
+                <label for="hero_button_link" class="form-label">Hero Button Link</label>
+                <input type="text" class="form-control" id="hero_button_link" name="hero_button_link" value="<%= homePage.hero_button_link %>" required>
+            </div>
+
+            <!-- Services Section -->
+            <div class="mb-3">
+                <label for="services_title" class="form-label">Services Title</label>
+                <input type="text" class="form-control" id="services_title" name="services_title" value="<%= homePage.services_title %>" required>
+            </div>
+            <div class="mb-3">
+                <label for="service_1_title" class="form-label">Service 1 Title</label>
+                <input type="text" class="form-control" id="service_1_title" name="service_1_title" value="<%= homePage.service_1_title %>" required>
+            </div>
+            <div class="mb-3">
+                <label for="service_1_description" class="form-label">Service 1 Description</label>
+                <textarea class="form-control" id="service_1_description" name="service_1_description" required><%= homePage.service_1_description %></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="service_2_title" class="form-label">Service 2 Title</label>
+                <input type="text" class="form-control" id="service_2_title" name="service_2_title" value="<%= homePage.service_2_title %>" required>
+            </div>
+            <div class="mb-3">
+                <label for="service_2_description" class="form-label">Service 2 Description</label>
+                <textarea class="form-control" id="service_2_description" name="service_2_description" required><%= homePage.service_2_description %></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="service_3_title" class="form-label">Service 3 Title</label>
+                <input type="text" class="form-control" id="service_3_title" name="service_3_title" value="<%= homePage.service_3_title %>" required>
+            </div>
+            <div class="mb-3">
+                <label for="service_3_description" class="form-label">Service 3 Description</label>
+                <textarea class="form-control" id="service_3_description" name="service_3_description" required><%= homePage.service_3_description %></textarea>
+            </div>
+
+            <!-- Call to Action Section -->
+            <div class="mb-3">
+                <label for="cta_title" class="form-label">CTA Title</label>
+                <input type="text" class="form-control" id="cta_title" name="cta_title" value="<%= homePage.cta_title %>" required>
+            </div>
+            <div class="mb-3">
+                <label for="cta_button_text" class="form-label">CTA Button Text</label>
+                <input type="text" class="form-control" id="cta_button_text" name="cta_button_text" value="<%= homePage.cta_button_text %>" required>
+            </div>
+            <div class="mb-3">
+                <label for="cta_button_link" class="form-label">CTA Button Link</label>
+                <input type="text" class="form-control" id="cta_button_link" name="cta_button_link" value="<%= homePage.cta_button_link %>" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Update Home Page</button>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
