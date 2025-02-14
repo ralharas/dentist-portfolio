@@ -1,24 +1,29 @@
 <%- include('partials/header') %>
-<div class="container mt-5">
-    <h1>Before & After</h1>
-    <div class="row">
-        <% cases.forEach(case => { %>
+
+<!-- Before & After Page -->
+<div class="container my-5">
+    <h1 class="text-center fw-bold mb-4">Before & After Transformations</h1>
+    <p class="text-center text-muted">Click an image to view more details</p>
+
+    <div class="row g-4">
+        <% cases.forEach(caseItem => { %>
             <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title"><%= case.title %></h5>
-                        <p class="card-text"><%= case.description %></p>
-                        <div class="row">
-                            <% case.images.forEach(image => { %>
-                                <div class="col-md-6">
-                                    <img src="<%= image %>" class="img-fluid">
-                                </div>
-                            <% }) %>
-                        </div>
+                <div class="card shadow-lg border-0 h-100">
+                    <img src="<%= caseItem.after_image %>" class="card-img-top img-fluid rounded" alt="<%= caseItem.title %>">
+                    <div class="card-body text-center">
+                        <h5 class="card-title fw-bold"><%= caseItem.title %></h5>
+                        <p class="card-text text-muted"><%= caseItem.description %></p>
+                        <a href="/before-after/view/<%= caseItem.id %>" class="btn btn-primary btn-lg w-100">View More</a>
                     </div>
                 </div>
             </div>
         <% }) %>
     </div>
 </div>
+
 <%- include('partials/footer') %>
+
+<!-- Link Bootstrap & External CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/before-after.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

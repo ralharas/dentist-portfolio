@@ -1,0 +1,99 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= homePage.logo_text %></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/view.css">
+    <%- include('partials/header') %>
+</head>
+
+
+<div class="container my-5">
+    <div class="text-center mb-5">
+        <h1 class="fw-bold"><%= caseItem.title %> - Before & After</h1>
+        <p class="text-muted"><%= caseItem.description %></p>
+    </div>
+
+    <!-- Before & After Section -->
+    <div class="row g-4 justify-content-center">
+        <div class="col-md-5">
+            <div class="card shadow-lg">
+                <div class="card-body text-center">
+                    <h4 class="card-title fw-bold">Before</h4>
+                    <img src="<%= caseItem.before_image %>" class="img-fluid rounded shadow-lg" alt="Before"
+                        data-bs-toggle="modal" data-bs-target="#imageModalBefore">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-5">
+            <div class="card shadow-lg">
+                <div class="card-body text-center">
+                    <h4 class="card-title fw-bold">After</h4>
+                    <img src="<%= caseItem.after_image %>" class="img-fluid rounded shadow-lg" alt="After"
+                        data-bs-toggle="modal" data-bs-target="#imageModalAfter">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- More Images Section -->
+    <% if (caseItem.extra_images && caseItem.extra_images.length > 0) { %>
+        <div class="mt-5">
+            <h3 class="fw-bold text-center">More Images</h3>
+            <div class="row g-4">
+                <% caseItem.extra_images.forEach(image => { %>
+                    <div class="col-md-4 text-center">
+                        <div class="card shadow">
+                            <img src="<%= image %>" class="img-fluid rounded shadow-lg" alt="Extra Image"
+                                data-bs-toggle="modal" data-bs-target="#imageModal<%= image.replace(/[^a-zA-Z0-9]/g, '') %>">
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        </div>
+    <% } %>
+
+    <!-- Back Button -->
+    <div class="text-center mt-5">
+        <a href="/before-after" class="btn btn-outline-primary btn-lg">Back to Before & After</a>
+    </div>
+</div>
+
+<!-- Bootstrap Modals for Enlarged Images -->
+<div class="modal fade" id="imageModalBefore" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body text-center">
+                <img src="<%= caseItem.before_image %>" class="img-fluid rounded">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="imageModalAfter" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body text-center">
+                <img src="<%= caseItem.after_image %>" class="img-fluid rounded">
+            </div>
+        </div>
+    </div>
+</div>
+
+<% caseItem.extra_images.forEach(image => { %>
+    <div class="modal fade" id="imageModal<%= image.replace(/[^a-zA-Z0-9]/g, '') %>" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <img src="<%= image %>" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </div>
+<% }) %>
+
+<%- include('partials/footer') %>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

@@ -1,1 +1,22 @@
-  
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            <% if (homePage.logo_image) { %>
+                <img src="<%= homePage.logo_image %>" alt="Logo" style="height: 50px;">
+            <% } else { %>
+                <span style="font-weight: bold; font-size: 1.5rem;"><%= homePage.logo_text %></span>
+            <% } %>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <% navbar.forEach(item => { %>
+                    <li class="nav-item"><a class="nav-link" href="<%= item.link %>"><%= item.label %></a></li>
+                <% }) %>
+            </ul>
+        </div>
+    </div>
+</nav>

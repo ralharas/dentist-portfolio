@@ -9,36 +9,18 @@
 </head>
 <body>
     <!-- Header -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <%- include('partials/header') %>
+
+    <!-- Hero Sectio -->
+    <section class="hero-section text-center py-5 bg-light" 
+    style="background-image: url('<%= homePage.hero_background %>');">
     <div class="container">
-        <a class="navbar-brand" href="/">
-            <% if (homePage.logo_image) { %>
-                <img src="<%= homePage.logo_image %>" alt="Logo" style="height: 50px;">
-            <% } else { %>
-                <span style="font-weight: bold; font-size: 1.5rem;"><%= homePage.logo_text %></span>
-            <% } %>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <% navbar.forEach(item => { %>
-                    <li class="nav-item"><a class="nav-link" href="<%= item.link %>"><%= item.label %></a></li>
-                <% }) %>
-            </ul>
-        </div>
+        <h1 class="display-4"><%= homePage.hero_title %></h1>
+        <p class="lead"><%= homePage.hero_description %></p>
+        <a href="<%= homePage.hero_button_link %>" class="btn btn-primary btn-lg"><%= homePage.hero_button_text %></a>
     </div>
-</nav>
-    <!-- Hero Section -->
-    <section class="hero-section text-center py-5 bg-light">
-        <div class="container">
-            <h1 class="display-4"><%= homePage.hero_title %></h1>
-            <p class="lead"><%= homePage.hero_description %></p>
-            <a href="<%= homePage.hero_button_link %>" class="btn btn-primary btn-lg"><%= homePage.hero_button_text %></a>
-        </div>
     </section>
+
 
     <!-- Services Section -->
     <section class="services-section py-5">

@@ -1,0 +1,112 @@
+/* Custom Fonts */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.about-container {
+    max-width: 900px;
+    margin: auto;
+    padding: 50px 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Profile Section */
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 40px;
+    padding: 20px;
+    background: linear-gradient(to right, #007bff, #6610f2);
+    border-radius: 15px;
+    color: white;
+}
+
+.profile-picture {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.profile-info h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.profile-info .title {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.profile-info .location {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+/* Section Styles */
+.about-section, .philosophy-section, .education-section, .experience-section, .skills-section {
+    margin-bottom: 35px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-section h2, .philosophy-section h2, .education-section h2, .experience-section h2, .skills-section h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+}
+
+/* Education & Experience */
+.education-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.education-section ul li {
+    font-size: 1.1rem;
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+}
+
+.education-section ul li::before {
+    content: "\2022";
+    color: #007bff;
+    font-weight: bold;
+    display: inline-block;
+    width: 1rem;
+}
+
+/* Skills Section */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.skill-badge {
+    background: linear-gradient(to right, #007bff, #6610f2);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 500;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.skill-badge:hover {
+    transform: scale(1.1);
+}

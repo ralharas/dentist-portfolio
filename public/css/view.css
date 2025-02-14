@@ -1,0 +1,97 @@
+/* General Page Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+}
+
+/* Page Title */
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* Page Description */
+p.text-muted {
+    font-size: 1.2rem;
+    text-align: center;
+    color: #7f8c8d;
+}
+
+/* Card Hover Effects */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Before & After Images */
+.img-fluid {
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Image Hover Effects */
+.img-hover {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.img-hover:hover {
+    transform: scale(1.05);
+    opacity: 0.85;
+}
+
+/* More Images Section */
+.section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #34495e;
+    text-align: center;
+}
+
+/* Extra Images Grid */
+.extra-images {
+    margin-top: 20px;
+}
+
+.extra-images .col-md-4 {
+    margin-bottom: 20px;
+}
+
+/* Back Button */
+.custom-button {
+    font-size: 1.2rem;
+    padding: 12px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.custom-button:hover {
+    background-color: #007bff;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+/* Modal Styling */
+.modal-body img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.modal-content {
+    background: #ecf0f1;
+    border-radius: 10px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.modal-body {
+    padding: 20px;
+}
